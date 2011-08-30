@@ -1,0 +1,7 @@
+<%= form_tag(:action => 'create') do %>
+
+<br> Name <%= text_field(:service, :name) %>
+<br> Group <%= text_field(:service, :group) %>
+<p> <%= submit_tag('Save') %>
+
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_tag(:action => 'create') do %>
+
+<table>
+
+<tr><td>Employee Name<td><%= text_field(:employee, :name) %>
+	
+</table>
+<p> <%= submit_tag("Save") %>
+<% end%>

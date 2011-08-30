@@ -1,0 +1,7 @@
+<table border=0 bgcolor=eeeeee>
+<tr><td> Name              <td><%= @customer.name %>
+<tr><td> Zip Code          <td><%= @customer.zipcode %>
+<tr><td> Customer Code     <td><%= @customer.customercode %>
+<tr><td> Email             <td><%= @customer.email %>
+</table>
+<p> <%= link_to('Goto List', :action => 'list' ) %>

@@ -1,0 +1,8 @@
+<p> <%= @store.id %>
+
+<%= form_tag(:action => "update", :id => @store.id) do %>
+<%=  text_field(:store, :name) %>
+<%=  submit_tag("Save") %>
+
+<% end %>
+<p><%= link_to("Back to list", {:action => "list"}) %>	

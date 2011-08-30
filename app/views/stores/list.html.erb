@@ -1,0 +1,15 @@
+<h1>Stores#list</h1>
+<p>Find me in app/views/stores/list.html.erb</p>
+
+<table border=0>
+<% @stores.each do |store| %>
+
+<tr bgcolor=eeeeee><td> <%= store.name %>
+	<td><%= link_to("show", {:action => "show", :id => store.id}) %>
+	<%= link_to("edit", {:action => "edit", :id => store.id}) %>
+	<%= link_to("delete", {:action => "delete", :id => store.id}) %>
+
+<% end %>
+
+</table>
+<p><p>	<%= link_to("Create new Store", {:action => "new"}) %>

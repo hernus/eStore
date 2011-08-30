@@ -1,0 +1,9 @@
+<%= form_tag(:action => 'update', :id => @service.id) do%>
+
+<br>ID:    <%= @service.id %>
+<br> Name  <%= text_field( :service, :name ) %>
+<br> Group <%= text_field( :service, :group ) %>
+<br> Qty   <%= text_field( :service, :qty ) %>
+<br>       <%= submit_tag('Save') %> 	
+
+<% end %>

@@ -1,0 +1,9 @@
+<%= form_tag(:action => 'create') do %>
+<table border=0>
+<tr><td>Customer Code<td><%= text_field(:customer, :customercode ) %>
+<tr><td>Name<td><%= text_field(:customer, :name ) %>
+<tr><td>Zip Code<td><%= text_field(:customer, :zipcode ) %>
+<tr><td>Email<td><%= text_field(:customer, :email ) %>
+<tr><td colspan=2><%= submit_tag('Save')%>
+</table>
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Customers</h1>
+<table border=0>
+<% @customers.each do |customer| %>
+<tr bgcolor=eeeeee><td> <%= customer.name %> 
+<td><%= link_to('edit', :action => 'edit', :id => customer.id ) %> 
+<%= link_to( 'delete', :action => 'delete', :id => customer.id ) %>
+<%= link_to( 'show', :action => 'show', :id => customer.id ) %>
+<%= link_to( 'invoices', :controller => 'invoices', :action => 'list_customer_invoices', :id => customer.id ) %>
+<% end %>
+</table>	
+<p> &nbsp	
+<p> <%= link_to("Create new customer", :action => 'new' ) %>	

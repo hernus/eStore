@@ -1,0 +1,7 @@
+<%= form_tag(:action => 'update', :id => @employee.id ) %>
+<table>
+<tr><td>ID<td><%= @employee.id %>	
+<tr><td>Name<td><%= text_field(:employee, :name)%>	
+<tr><td><%= label(:employee, :created_at) %><td><%= datetime_select(:employee, :created_at)%>		
+</table>	
+<br><%= submit_tag('Save')%>

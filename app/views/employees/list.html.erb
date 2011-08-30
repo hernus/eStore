@@ -1,0 +1,12 @@
+<table>
+<% @employees.each do |employee|%>
+
+<tr><td> <%= employee.id %> -- <%= employee.name %> 
+	<td> 
+		<%= link_to('show', :action => 'show', :id => employee.id ) %>
+				<%= link_to('edit', :action => 'edit', :id => employee.id ) %>
+						<%= link_to('delete', :action => 'delete', :id => employee.id ) %>
+	
+<% end %>
+</table>
+<p> <%= link_to('New employee', :action => 'new' ) %>

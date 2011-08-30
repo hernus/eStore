@@ -1,0 +1,22 @@
+<br> Customer ID <%= @customer.id %>
+<br> Name <%= @customer.name %>
+
+<p> Invoices:
+	
+	
+<table border=1 cellpadding=1 cellspacing=1>
+	<tr><td>ID
+		<td>Inv. Number
+		<td>Inv. Date
+		<td>	
+
+<% @invoices.each do |invoice| %>
+
+<tr><td> <%= invoice.id %>
+	<td> <%= invoice.invoice_number %>
+<td> <%= invoice.invoice_date %>
+<td> <%= link_to('edit', :action => 'edit', :id => invoice.id) %>	
+
+<% end %>	
+
+</table>

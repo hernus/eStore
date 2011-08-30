@@ -1,0 +1,61 @@
+<body bgcolor=cccccc>
+<table border=0 width=100% celpadding=0 cellspacing=0>
+	<tr><td width=33% bgcolor=cccccc>&nbsp<td width=33% bgcolor=cccccc><td width=33% bgcolor=cccccc>
+<tr><td bgcolor=cccccc><td bgcolor=white>
+	
+<table border=0 cellspacing=10 cellpadding=10><tr><td>	
+<table width=600 border="0" cellspacing="1" cellpadding="1">
+	<tr bgcolor=dddddd><th colspan=2> Invoice
+	<tr <%= @etag.color %>  ><td>Customer  </td>
+		<td> <%= @invoice.customer.name %>  </td></tr>	
+	<tr <%= @etag.color %> > <td>Invoice No 
+		<td> <%= @invoice.invoice_number  %>
+	<tr <%= @etag.color %> ><td>Invoice Date 
+		<td> <%= @invoice.invoice_date %>			
+</table>
+
+
+<p> 
+<table border=0 width=600>
+<tr bgcolor=dddddd><th>ID
+    <th>Product
+    <th>Qty
+    <th>Price
+    <th>Amount
+    <th>
+
+
+<% @items.each do |item|  %>
+ 
+ <tr <%= @etag.color %>  ><td><%= item.id %>
+     <td><%= item.product %>
+     <td><%= item.qty %>
+     <td><%= item.price %>
+     <td><%= item.amount %>
+     <td><%= link_to('delete', :action => 'delete_item', :id => item.id ) %>
+<% end %>
+</table>
+
+<p>
+<%= form_tag(:action => 'append_item', :id => @invoice.id ) do %>
+<table width=600 border=0 cellpadding=1 cellspacing=1>
+<tr><td>Product<td>Qty<td>Price<td>
+<tr><td><%= text_field(:item, :product) %>
+    <td><%= text_field(:item, :qty, :size => 6) %>
+    <td><%= text_field(:item, :price, :size => 6) %>
+    <td><%= submit_tag('Add item') %>
+</table>
+<% end %>
+
+</table>
+<td bgcolor=cccccc width=33%>
+<tr height=90%>	<td bgcolor=cccccc colspan=3>
+<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp
+<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp
+<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp
+<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp<br>&nbsp	
+	
+</table>
+
+
+	

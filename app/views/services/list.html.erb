@@ -1,0 +1,28 @@
+<table border=0>
+
+<% 
+@tr1 = 'bgcolor=dddddd '
+@tr2 = 'bgcolor=white '
+@tr = ''	
+ 
+@services.each do |service|	
+if @tr == @tr1
+ @tr = @tr2
+else
+ @tr = @tr1
+end 	
+%>
+	
+	<tr <%= @tr %> >	
+		<td>
+		<%= service.id %> <%= service.name %>
+		<td>
+		<%= link_to('show', :action => 'show', :id => service.id)%>
+		<%= link_to('edit', :action => 'edit', :id => service.id)%>
+		<%= link_to('delete', :action => 'delete', :id => service.id)%>
+		
+	
+<% end %>	
+	
+</table>	
+<p>		<%= link_to('Create new Service', :action => 'new')%>
